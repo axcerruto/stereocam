@@ -18,7 +18,7 @@ To convert between pixel coordinates and real-world (x, y, z) coordinates:
 from triangulator import Triangulator
 tr = Triangulator(inter_axial_distance=120, viewing_angle=70.3)
 ```
-For a certain point in space, find pixel coordinates on left and right cameras and use the following function to return real-world (x, y, z) coordinates:
+For a certain point in space, find pixel coordinates on left and right cameras and use the following function to return real-world (x, y, z) coordinates in millimeters:
 ```
 coords_left = (x_left, y_left)
 coords_right = (x_right, y_right)

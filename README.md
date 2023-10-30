@@ -7,8 +7,9 @@ python3 -m pip install opencv-python
 python3 -m pip install mediapipe
 ```
 
-Run triangulator with two webcams connected via USB.  
-(x, y, z) coordinates for index finger tip are returned in millimeters.
+Run example with two webcams connected via USB.  
+This example tracks hand coordinates in three dimensions.  
+Real-world (x, y, z) coordinates for the index finger tip are returned in millimeters.
 ```
 python3 example.py
 ```

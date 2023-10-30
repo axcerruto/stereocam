@@ -9,7 +9,7 @@ python3 -m pip install mediapipe
 
 ## Quick Guide
 1. Install two Logitech C615 webcams into the 3D-printed housing at this link: https://www.thingiverse.com/thing:6290545.
-2. Follow this link for the logic behind triangulation used in this code: https://medium.com/@acerruto/simple-depth-sensing-with-a-dyi-stereo-camera-d4f42627f7e7
+2. Follow this link for the math behind triangulation used in this code: https://medium.com/@acerruto/simple-depth-sensing-with-a-dyi-stereo-camera-d4f42627f7e7
 
 ## Example
 Run example with two webcams connected via USB.  

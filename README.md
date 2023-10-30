@@ -8,10 +8,10 @@ python3 -m pip install mediapipe
 ```
 
 Run triangulator with two webcams connected via USB.
-```
-python3 triangulator.py
-```
 (x,y,z) coordinates for index finger tip are returned in millimeters.
+```
+python3 example.py
+```
 
 To convert between pixel coordinates and real-world x,y,z coordinates:
 ```

@@ -130,11 +130,13 @@ class Triangulator:
 		Returns:
 		y -- vertical distance in millimeters from stereocam center
 		of point defined by input coordinates
+		pitch -- angle in radians referenced to stereocam horizontal
+		centerplane of point defined by input coordinates
 		"""
-		theta = self._get_theta(np.mean([yl, yr]), self.w * self.aspect_ratio)
-		theta = np.pi/2 - theta
-		y = round(z * np.tan(theta))
-		return y
+		pitch = self._get_theta(np.mean([yl, yr]), self.w * self.aspect_ratio)
+		pitch = np.pi/2 - pitch
+		y = round(z * np.tan(pitch))
+		return y, pitch
 
 
 	def _pix2mm_x(self, z, angle):
@@ -176,15 +178,17 @@ class Triangulator:
 		in normalized pixel values [0, 1]
 
 		Returns:
-		(x, y, z) -- coordinates in millimeters referenced to stereocamera
-		center of point defined by input coordinates
+		(x, y, z), (yaw, pitch)
+		(x, y, z) -- coordinates in millimeters of point defined by input
+		coordinates, referenced to stereocamera center
+		(yaw, pitch) -- angles in radians referenced to stereocamera center
 		"""
 		(xl, yl) = coords_left
 		(xr, yr) = coords_right
 		z, yaw = self._pix2mm_z((xl, yl), (xr, yr))
 		x = self._pix2mm_x(z, yaw)
-		y = self._pix2mm_y(yl, yr, z)
-		return (x, y, z)
+		y, pitch = self._pix2mm_y(yl, yr, z)
+		return (x, y, z), (yaw, pitch)
 
 
 # For testing module.

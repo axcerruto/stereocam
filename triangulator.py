@@ -220,7 +220,7 @@ if __name__ == "__main__":
 		cv2.imshow(f"[left, right] cameras", img)
 
 		if(coords_left is not None and coords_right is not None):
-			(x, y, z) = tr.pix2mm(coords_left, coords_right)
+			(x, y, z),_ = tr.pix2mm(coords_left, coords_right)
 			print(f"{x}, {y}, {z}")
 
 		if cv2.waitKey(5) == ord('q'):
